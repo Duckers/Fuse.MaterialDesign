@@ -14,6 +14,7 @@
 				<Material.AppBar Dock="Top">
 					<Material.AppBarIcon Dock="Left" Icon="Menu"  />
 					<Material.AppBarIcon Dock="Right" Icon="DotsVertical"  />
+					<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
 				</Material.AppBar>
 				
 				<StackPanel Alignment="BottomRight">
@@ -21,7 +22,14 @@
 					<Material.ActionButton Icon="AccountPlus" />
 				</StackPanel>
 
-				<Material.Card Width="100" Height="100" />
+				<Material.Menu>
+					<Material.IconMenuItem Text="Option one" />
+					<Material.IconMenuItem Text="Move to trash" Icon="Delete" />
+					<Material.IconMenuItem Text="Lolzor material" />
+				</Material.Menu>
+
+				<Material.Card Width="100" Height="100">
+				</Material.Card>
 
 			</DockPanel>
 		</Panel>

@@ -17,6 +17,7 @@
 	<float4 ux:Global="Material.DialogColor" ux:Value="Material.White" />
 	<float4 ux:Global="Material.AppBarIconColor" ux:Value="Material.White" />
 	<float4 ux:Global="Material.AccentIconColor" ux:Value="Material.White" />
+	<float4 ux:Global="Material.PrimaryIconColor" ux:Value="Material.DarkActiveIconColor" />
 
 	<!-- https://material.google.com/style/color.html#color-themes -->
 	<WhileTrue Value="true" ux:Class="Material.LightThemeBase">
@@ -28,6 +29,7 @@
 		<float4 ux:Key="Material.CardColor" ux:Value="Material.White" />
 		<float4 ux:Key="Material.DialogColor" ux:Value="Material.White" />
 		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.Black" />
+		<float4 ux:Key="Material.PrimaryIconColor" ux:Value="Material.DarkActiveIconColor" />
 	</WhileTrue>
 
 	<Material.LightThemeBase ux:Class="Material.LightTheme">
@@ -45,6 +47,7 @@
 		<float4 ux:Key="Material.CardColor" ux:Value="Material.Grey800" />
 		<float4 ux:Key="Material.DialogColor" ux:Value="Material.Grey800" />
 		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.White" />
+		<float4 ux:Key="Material.PrimaryIconColor" ux:Value="Material.LightActiveIconColor" />
 	</WhileTrue>
 
 	<Material.DarkThemeBase ux:Class="Material.DarkTheme">

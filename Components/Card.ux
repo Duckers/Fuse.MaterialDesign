@@ -1,6 +1,4 @@
-<Panel ux:Class="Material.Card"  >
-	<Rectangle CornerRadius="2" Color="{Resource Material.CardColor}">
-		<DropShadow Color="#0002" Distance="0" />
-		<DropShadow Color="#0002" Distance="2" />
-	</Rectangle>
-</Panel>
+<Rectangle CornerRadius="2" ux:Class="Material.Card" Color="{Resource Material.CardColor}">
+	<DropShadow Color="#0002" Distance="0" />
+	<DropShadow Color="#0002" Distance="2" />
+</Rectangle>

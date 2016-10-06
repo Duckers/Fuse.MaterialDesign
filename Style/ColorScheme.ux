@@ -11,9 +11,9 @@
 	<float4 ux:Global="Material.WhiteHintTextColor" ux:Value="#FFFFFF80" />
 
 	<!-- https://material.google.com/style/icons.html -->
-	<float ux:Global="Material.DarkActiveIconOpacity" ux:Value="0.54" />
-	<float ux:Global="Material.DarkInactiveIconOpacity" ux:Value="0.26" />
-	<float ux:Global="Material.LightActiveIconOpacity" ux:Value="1.0" />
-	<float ux:Global="Material.LightInactiveIconOpacity" ux:Value="0.3" />
+	<float4 ux:Global="Material.DarkActiveIconColor" ux:Value="0,0,0,0.54" />
+	<float4 ux:Global="Material.DarkInactiveIconColor" ux:Value="0,0,0,0.26" />
+	<float4 ux:Global="Material.LightActiveIconColor" ux:Value="1,1,1,1.0" />
+	<float4 ux:Global="Material.LightInactiveIconColor" ux:Value="1,1,1,0.3" />
 
 </Panel>

@@ -1,3 +1,23 @@
-<Material.Card ux:Class="Material.Menu" Margin="16" Padding="16">
+<Material.Card ux:Class="Material.Menu" ux:Name="menu" Margin="16" Padding="0,8,0,8" Alignment="TopRight">
+	<StackLayout />
 	<!-- https://material.google.com/components/menus.html -->
+
+	<Material.Text ux:Class="Material.MenuItemText" FontSize="16" />
+
+	<Container ux:Class="Material.MenuItem" Subtree="content" Height="48" Padding="16">
+		<string ux:Property="Text" />
+		<Grid Columns="1*" ux:Name="content" ux:Binding="Children" Margin="0,0,0,20">
+			<Material.MenuItemText Value="{Property Text}" />
+		</Grid>
+	</Container>
+
+	<Container ux:Class="Material.IconMenuItem" Subtree="content" Height="48" Padding="16">
+		<string ux:Property="Text" />
+		<Material.IconName ux:Property="Icon" />
+		<Grid Columns="40,1*" ux:Name="content" ux:Binding="Children" Margin="0,0,0,20">
+			<Material.MaterialIcon Icon="{Property Icon}" Margin="0,-4,0,0" Color="{Resource Material.PrimaryIconColor}" />
+			<Material.MenuItemText Value="{Property Text}" />
+		</Grid>
+	</Container>
+
 </Material.Card>
