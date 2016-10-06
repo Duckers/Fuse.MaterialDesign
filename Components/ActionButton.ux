@@ -11,7 +11,7 @@
 			<Panel ux:Name="inner" Alignment="Center">
 				<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AccentIconColor}" />
 			</Panel>
-			<DropShadow />
 		</Material.RippleResponseCircle>
+		<Shadow />
 	</Circle>
 </Container>
