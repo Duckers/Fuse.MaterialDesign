@@ -4,20 +4,26 @@
 
 	<Material.Text ux:Class="Material.MenuItemText" FontSize="16" />
 
-	<Container ux:Class="Material.MenuItem" Subtree="content" Height="48" Padding="16">
+	<Container ux:Class="Material.MenuItem" Subtree="content" Height="48" >
 		<string ux:Property="Text" />
-		<Grid Columns="1*" ux:Name="content" ux:Binding="Children" Margin="0,0,0,20">
-			<Material.MenuItemText Value="{Property Text}" />
-		</Grid>
+		<Material.RippleResponseRectangle ux:Name="content" ux:Binding="Children">
+			<Material.MenuItemText Value="{Property Text}" Margin="16" />
+		</Material.RippleResponseRectangle>
 	</Container>
 
-	<Container ux:Class="Material.IconMenuItem" Subtree="content" Height="48" Padding="16">
+	<Container ux:Class="Material.IconMenuItem" Subtree="content" Height="48" >
 		<string ux:Property="Text" />
 		<Material.IconName ux:Property="Icon" />
-		<Grid Columns="40,1*" ux:Name="content" ux:Binding="Children" Margin="0,0,0,20">
-			<Material.MaterialIcon Icon="{Property Icon}" Margin="0,-4,0,0" Color="{Resource Material.PrimaryIconColor}" />
-			<Material.MenuItemText Value="{Property Text}" />
-		</Grid>
+		<Material.RippleResponseRectangle ux:Binding="Children">
+			<Grid Columns="40,1*" ux:Name="content"  Margin="16">
+				<Material.MaterialIcon Icon="{Property Icon}" Margin="0,-4,0,0" Color="{Resource Material.PrimaryIconColor}" />
+				<Material.MenuItemText Value="{Property Text}" />
+			</Grid>
+		</Material.RippleResponseRectangle>
 	</Container>
+
+	<AddingAnimation>
+		<Resize X="200" Duration="{Resource Material.EnteringDuration}" Easing="Material.DecelerationCurve" />
+	</AddingAnimation>
 
 </Material.Card>

@@ -6,10 +6,12 @@
 		<Change this.Margin="24" />
 	</Material.WhileTablet>
 
-	<Circle ux:Binding="Children" Color="{Resource Material.AccentColor}" >
-		<Panel ux:Name="inner" Alignment="Center">
-			<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AccentIconColor}" />
-		</Panel>
-		<DropShadow />
+	<Circle ux:Binding="Children" Color="{Resource Material.AccentColor}">
+		<Material.RippleResponseCircle RippleColor="#fff2" RippleFromPointer="false" >
+			<Panel ux:Name="inner" Alignment="Center">
+				<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AccentIconColor}" />
+			</Panel>
+			<DropShadow />
+		</Material.RippleResponseCircle>
 	</Circle>
 </Container>

@@ -30,6 +30,7 @@
 		<float4 ux:Key="Material.DialogColor" ux:Value="Material.White" />
 		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.Black" />
 		<float4 ux:Key="Material.PrimaryIconColor" ux:Value="Material.DarkActiveIconColor" />
+		<iOS.StatusBarConfig Style="Dark" />
 	</WhileTrue>
 
 	<Material.LightThemeBase ux:Class="Material.LightTheme">
@@ -37,6 +38,7 @@
 		<float4 ux:Key="Material.PrimaryColorLight" ux:Value="Material.Grey100" />
 		<float4 ux:Key="Material.PrimaryColorDark" ux:Value="Material.Grey300" />
 	</Material.LightThemeBase>
+
 
 	<WhileTrue Value="true" ux:Class="Material.DarkThemeBase">
 		<float4 ux:Key="Material.PrimaryTextColor" ux:Value="Material.WhitePrimaryTextColor" />
@@ -48,6 +50,7 @@
 		<float4 ux:Key="Material.DialogColor" ux:Value="Material.Grey800" />
 		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.White" />
 		<float4 ux:Key="Material.PrimaryIconColor" ux:Value="Material.LightActiveIconColor" />
+		<iOS.StatusBarConfig Style="Light" />
 	</WhileTrue>
 
 	<Material.DarkThemeBase ux:Class="Material.DarkTheme">

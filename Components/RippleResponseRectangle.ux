@@ -1,0 +1,59 @@
+<Container ux:Class="Material.RippleResponseRectangle" Subtree="rect" RippleColor="#00000017" RippleFromPointer="true">
+	<float4 ux:Property="CornerRadius" />
+	<float4 ux:Property="RippleColor" />
+	<bool ux:Property="RippleFromPointer" />
+	<JavaScript ux:Binding="Children">
+		var Observable = require("FuseJS/Observable");
+		var hitPoints = Observable();
+		var rippleFromPointer = this.RippleFromPointer;
+		var elementCenter = [50, 50];
+		
+		module.exports = {
+			onPlaced : function(args) {
+				elementCenter[0] = args.width / 2;
+				elementCenter[1] = args.height / 2;
+			},
+			onPressed : function(args) {
+
+				var position = elementCenter;
+				if (rippleFromPointer.value)
+					position = [ args.localX, args.localY ];
+
+				hitPoints.add({
+					position : position,
+					id : args.index
+				});
+			},
+			onReleased : function(args) {
+				for (var i = 0; i < hitPoints.length; i++) {
+					if (hitPoints.getAt(i).id === args.index) {
+						hitPoints.removeAt(i);
+						return;
+					}
+				}
+			},
+			hitPoints :  hitPoints,
+			translucentRippleColor : this.RippleColor.map(function(args) { return [ args[0], args[1], args[2], 0 ];  } )
+		}
+	</JavaScript>
+
+	<Rectangle ux:Name="rect" ux:Binding="Children" CornerRadius="{ReadProperty CornerRadius}" Pressed="{onPressed}" Released="{onReleased}" Fill="0,0,0,0" HitTestMode="LocalVisual" Placed="{onPlaced}">
+		<Panel Layer="Background">
+			<Each Items="{hitPoints}">
+				<Rectangle CornerRadius="{ReadProperty CornerRadius}">
+					<Material.CircleFill ux:Name="fill" Color="{ReadProperty RippleColor}" CircleCenter="{position}" Radius="0"/>
+					<AddingAnimation>
+						<PlayTo Target="timeline" Direction="Backward" Progress="1" />
+					</AddingAnimation>
+					<RemovingAnimation>
+						<Change fill.Radius="300" Duration="0.45" Easing="Material.StandardCurve" MixOp="Add" />
+						<Change Target="fill.Color" Value="{translucentRippleColor}" Easing="BackIn" Duration="0.435" />
+					</RemovingAnimation>
+					<Timeline ux:Name="timeline">
+						<Change fill.Radius="3000" Duration="7" Easing="Material.StandardCurve" MixOp="Add" />
+					</Timeline>
+				</Rectangle>
+			</Each>
+		</Panel>
+	</Rectangle>
+</Container>

@@ -6,9 +6,9 @@
 	<float ux:Global="Material.ExitingDuration" ux:Value="0.195" />
 
 	<Material.WhileTablet>
-		<float ux:Key="Material.ComplexAnimationDuration" ux:Value="0.4875" />
-		<float ux:Key="Material.EnteringAnimationDuration" ux:Value="0.2925" />
-		<float ux:Key="Material.ExitingAnimationDuration" ux:Value="0.2535" />
+		<float ux:Key="Material.ComplexDuration" ux:Value="0.4875" />
+		<float ux:Key="Material.EnteringDuration" ux:Value="0.2925" />
+		<float ux:Key="Material.ExitingDuration" ux:Value="0.2535" />
 	</Material.WhileTablet>
 
 	<Material.WhileWearable>

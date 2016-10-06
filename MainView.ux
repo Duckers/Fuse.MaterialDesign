@@ -1,5 +1,13 @@
 <App>
-	<EdgeNavigator>
+	<EdgeNavigator  ux:Name="edgeNav">
+
+		<JavaScript>
+			module.exports = {
+				toggleDrawer: function() {
+					edgeNav.open("Left");
+				}
+			}
+		</JavaScript>
 
 		<Material.Drawer Edge="Left">
 			<ActivatingAnimation>
@@ -12,7 +20,7 @@
 			<DockPanel Color="{Resource Material.BackgroundColor}">
 
 				<Material.AppBar Dock="Top">
-					<Material.AppBarIcon Dock="Left" Icon="Menu"  />
+					<Material.AppBarIcon Dock="Left" Icon="Menu" Clicked="{toggleDrawer}" />
 					<Material.AppBarIcon Dock="Right" Icon="DotsVertical"  />
 					<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
 				</Material.AppBar>
@@ -30,11 +38,8 @@
 
 				<Material.Card Width="100" Height="100">
 				</Material.Card>
-
 			</DockPanel>
 		</Panel>
-			
-			
 	</EdgeNavigator>
 
 </App>

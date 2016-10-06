@@ -2,9 +2,10 @@
 	
 	<!-- https://material.google.com/layout/structure.html#structure-app-bar -->
 
-	<Material.MaterialIcon ux:Class="Material.AppBarIcon" Color="{Resource Material.AppBarIconColor}" />
-
-	
+	<Material.RippleResponseCircle ux:Class="Material.AppBarIcon" RippleColor="#fff2" RippleFromPointer="false" RippleMargin="-4">
+		<Material.IconName ux:Property="Icon" />
+		<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AppBarIconColor}" Margin="16" />
+	</Material.RippleResponseCircle>
 
 	<DockPanel ux:Binding="Children" Color="{Resource Material.PrimaryColor}">
 		<StatusBarBackground Dock="Top">
@@ -14,7 +15,7 @@
 			<WhileWindowLandscape>
 				<Change toolbar.Height="48" Duration="0.2" />
 			</WhileWindowLandscape>
-			<DockPanel ux:Name="toolstrip" Alignment="VerticalCenter" Margin="16,0,16,0">
+			<DockPanel ux:Name="toolstrip" Alignment="VerticalCenter" >
 				
 			</DockPanel>
 		</Panel>

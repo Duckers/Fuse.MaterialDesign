@@ -10,11 +10,11 @@ namespace Material
 	{
 		static Font _iconFont = new Font(new BundleFileSource(import BundleFile("materialdesignicons-webfont.ttf")));
 	
-		readonly Text _text;
+		readonly Fuse.Controls.Text _text;
 
 		public IconBase() 
 		{
-			_text = new Text();
+			_text = new Fuse.Controls.Text();
 			_text.Font = _iconFont;
 			Children.Add(_text);
 
