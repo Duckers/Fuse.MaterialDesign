@@ -1,0 +1,26 @@
+<Panel ux:Class="Material.AppBar" Dock="Top">
+	
+	<!-- https://material.google.com/layout/structure.html#structure-app-bar -->
+
+	<Material.Icon ux:Class="Material.AppBarIcon" Color="{Resource Material.AppBarIconColor}" />
+
+	
+
+	<DockPanel Color="{Resource Material.PrimaryColor}">
+		<StatusBarBackground Dock="Top">
+			<Android.StatusBarConfig Color="#0003" />
+		</StatusBarBackground>
+		<Panel ux:Name="toolbar" Height="56">
+			<WhileWindowLandscape>
+				<Change toolbar.Height="48" Duration="0.2" />
+			</WhileWindowLandscape>
+			<DockPanel Alignment="VerticalCenter" Margin="16,0,16,0">
+				<Material.AppBarIcon Dock="Left" Symbol="Menu"  />
+				<Material.AppBarIcon Dock="Right" Symbol="DotsVertical"  />
+			</DockPanel>
+		</Panel>
+	</DockPanel>
+
+	<Material.BottomEdgeShadow />
+	
+</Panel>

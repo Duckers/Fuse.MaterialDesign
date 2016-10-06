@@ -1,0 +1,35 @@
+<WhileTrue ux:Class="Material.AnimationConfig" Value="true">
+
+	<!-- https://material.google.com/motion/duration-easing.html#duration-easing-common-durations -->
+	<float ux:Global="Material.ComplexDuration" ux:Value="0.375" />
+	<float ux:Global="Material.EnteringDuration" ux:Value="0.225" />
+	<float ux:Global="Material.ExitingDuration" ux:Value="0.195" />
+
+	<Material.WhileTablet>
+		<float ux:Key="Material.ComplexAnimationDuration" ux:Value="0.4875" />
+		<float ux:Key="Material.EnteringAnimationDuration" ux:Value="0.2925" />
+		<float ux:Key="Material.ExitingAnimationDuration" ux:Value="0.2535" />
+	</Material.WhileTablet>
+
+	<Material.WhileWearable>
+		<float ux:Key="Material.ComplexDuration" ux:Value="0.2625" />
+		<float ux:Key="Material.EnteringDuration" ux:Value="0.1575" />
+		<float ux:Key="Material.ExitingDuration" ux:Value="0.1365" />
+	</Material.WhileWearable>
+
+	<!-- https://material.google.com/motion/duration-easing.html#duration-easing-natural-easing-curves -->
+	<CubicBezierEasing ux:Global="Material.StandardCurve" ControlPoints="0.4, 0.0, 0.2, 1.0" />
+	<CubicBezierEasing ux:Global="Material.DecelerationCurve" ControlPoints="0.0, 0.0, 0.2, 1.0" />
+	<CubicBezierEasing ux:Global="Material.AccelerationCurve" ControlPoints="0.4, 0.0, 1.0, 1.0" />
+	<CubicBezierEasing ux:Global="Material.SharpCurve" ControlPoints="0.4, 0.0, 0.6, 1.0" />
+
+	<!-- https://material.google.com/motion/movement.html#movement-movement-within-screen-bounds -->
+	<!--
+		This is how you would implement a "popup move":
+		<Move Duration="{Resource Material.EnteringDuration}" 
+			DurationBack="{Resource Material.ExitingDuration}"
+			Easing="Material.DecelerationCurve"
+			EasingBack="Material.AccelerationCurve" />
+	-->
+
+</WhileTrue>

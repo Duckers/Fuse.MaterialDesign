@@ -1,0 +1,57 @@
+<Panel ux:Class="Material.ColorThemes">
+
+	<!-- The default theme and color scheme -->
+
+	<float4 ux:Global="Material.PrimaryColor" ux:Value="Material.Indigo500" />
+	<float4 ux:Global="Material.PrimaryColorDark" ux:Value="Material.Indigo700" />
+	<float4 ux:Global="Material.PrimaryColorLight" ux:Value="Material.Indigo100" />
+	<float4 ux:Global="Material.AccentColor" ux:Value="Material.PinkA200" />
+	<float4 ux:Global="Material.AccentColorDark" ux:Value="Material.PinkA400" />
+	<float4 ux:Global="Material.AccentColorLight" ux:Value="Material.PinkA100" />
+	<float4 ux:Global="Material.PrimaryTextColor" ux:Value="Material.DarkPrimaryTextColor" />
+	<float4 ux:Global="Material.SecondaryTextColor" ux:Value="Material.DarkSecondaryTextColor" />
+	<float4 ux:Global="Material.DisabledTextColor" ux:Value="Material.DarkDisabledTextColor" />
+	<float4 ux:Global="Material.HintTextColor" ux:Value="Material.DarkHintTextColor" />
+	<float4 ux:Global="Material.BackgroundColor" ux:Value="Material.Grey50" />
+	<float4 ux:Global="Material.CardColor" ux:Value="Material.White" />
+	<float4 ux:Global="Material.DialogColor" ux:Value="Material.White" />
+	<float4 ux:Global="Material.AppBarIconColor" ux:Value="Material.White" />
+
+	<!-- https://material.google.com/style/color.html#color-themes -->
+	<WhileTrue Value="true" ux:Class="Material.LightThemeBase">
+		<float4 ux:Key="Material.PrimaryTextColor" ux:Value="Material.DarkPrimaryTextColor" />
+		<float4 ux:Key="Material.SecondaryTextColor" ux:Value="Material.DarkSecondaryTextColor" />
+		<float4 ux:Key="Material.DisabledTextColor" ux:Value="Material.DarkDisabledTextColor" />
+		<float4 ux:Key="Material.HintTextColor" ux:Value="Material.DarkHintTextColor" />
+		<float4 ux:Key="Material.BackgroundColor" ux:Value="Material.Grey50" />
+		<float4 ux:Key="Material.CardColor" ux:Value="Material.White" />
+		<float4 ux:Key="Material.DialogColor" ux:Value="Material.White" />
+		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.Black" />
+	</WhileTrue>
+
+	<Material.LightThemeBase ux:Class="Material.LightTheme">
+		<float4 ux:Key="Material.PrimaryColor" ux:Value="Material.Grey100" />
+		<float4 ux:Key="Material.PrimaryColorLight" ux:Value="Material.Grey100" />
+		<float4 ux:Key="Material.PrimaryColorDark" ux:Value="Material.Grey300" />
+	</Material.LightThemeBase>
+
+	<WhileTrue Value="true" ux:Class="Material.DarkThemeBase">
+		<float4 ux:Key="Material.PrimaryTextColor" ux:Value="Material.WhitePrimaryTextColor" />
+		<float4 ux:Key="Material.SecondaryTextColor" ux:Value="Material.WhiteSecondaryTextColor" />
+		<float4 ux:Key="Material.DisabledTextColor" ux:Value="Material.WhiteDisabledTextColor" />
+		<float4 ux:Key="Material.HintTextColor" ux:Value="Material.WhiteHintTextColor" />
+		<float4 ux:Key="Material.BackgroundColor" ux:Value="#303030" />
+		<float4 ux:Key="Material.CardColor" ux:Value="Material.Grey800" />
+		<float4 ux:Key="Material.DialogColor" ux:Value="Material.Grey800" />
+		<float4 ux:Key="Material.AppBarIconColor" ux:Value="Material.White" />
+	</WhileTrue>
+
+	<Material.DarkThemeBase ux:Class="Material.DarkTheme">
+		<float4 ux:Key="Material.PrimaryColor" ux:Value="Material.Grey900" />
+		<float4 ux:Key="Material.PrimaryColorLight" ux:Value="Material.Grey900" />
+		<float4 ux:Key="Material.PrimaryColorDark" ux:Value="Material.Black" />
+		
+	</Material.DarkThemeBase>
+
+
+</Panel>

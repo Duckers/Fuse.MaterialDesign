@@ -1,0 +1,11 @@
+<Panel ux:Class="Material.FormFactors">
+
+	<!-- Is active while the device is considered a tablet device in material design -->
+	<WhileWindowSize ux:Class="Material.WhileTablet" GreaterThan="720,1">
+
+	</WhileWindowSize>
+
+	<WhileWindowSize ux:Class="Material.WhileWearable" LessThan="300,1">
+
+	</WhileWindowSize>
+</Panel>

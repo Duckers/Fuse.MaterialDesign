@@ -1,0 +1,19 @@
+<Panel ux:Class="Material.ColorScheme">
+	<!-- https://material.google.com/style/color.html#color-text-background-colors -->
+	<float4 ux:Global="Material.DarkPrimaryTextColor" ux:Value="#000000DE" />
+	<float4 ux:Global="Material.DarkSecondaryTextColor" ux:Value="#0000008A" />
+	<float4 ux:Global="Material.DarkDisabledTextColor" ux:Value="#00000061" />
+	<float4 ux:Global="Material.DarkHintTextColor" ux:Value="#00000061" />
+
+	<float4 ux:Global="Material.WhitePrimaryTextColor" ux:Value="#FFFFFFFF" />
+	<float4 ux:Global="Material.WhiteSecondaryTextColor" ux:Value="#FFFFFF83" />
+	<float4 ux:Global="Material.WhiteDisabledTextColor" ux:Value="#FFFFFF80" />
+	<float4 ux:Global="Material.WhiteHintTextColor" ux:Value="#FFFFFF80" />
+
+	<!-- https://material.google.com/style/icons.html -->
+	<float ux:Global="Material.DarkActiveIconOpacity" ux:Value="0.54" />
+	<float ux:Global="Material.DarkInactiveIconOpacity" ux:Value="0.26" />
+	<float ux:Global="Material.LightActiveIconOpacity" ux:Value="1.0" />
+	<float ux:Global="Material.LightInactiveIconOpacity" ux:Value="0.3" />
+
+</Panel>

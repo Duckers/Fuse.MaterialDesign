@@ -1,0 +1,15 @@
+<Panel ux:Class="Material.Drawer" MaxWidth="280" Width="100%">
+
+	<Material.WhileTablet>
+		<Change this.MaxWidth="320" />
+	</Material.WhileTablet>
+
+	<Panel Color="{Resource Material.BackgroundColor}" />
+
+	<ActivatingAnimation>
+		<Change shadow.Opacity="1" Duration="1" Easing="ExponentialOut" />
+	</ActivatingAnimation>
+
+	<Material.RightEdgeShadow ux:Name="shadow" Opacity="0" />
+
+</Panel>

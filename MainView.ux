@@ -1,0 +1,40 @@
+<App>
+	
+	<float4 ux:Key="Material.AccentColor" ux:Value="Material.OrangeA200" />
+	<EdgeNavigator>
+
+		<Material.Drawer Edge="Left">
+			<ActivatingAnimation>
+				<Change overlay.Opacity="0.7" />
+			</ActivatingAnimation>
+		</Material.Drawer>
+
+		<Panel>
+			<Panel ux:Name="overlay" Color="Black" Opacity="0" HitTestMode="None" />
+			<DockPanel Color="{Resource Material.BackgroundColor}">
+				
+				
+
+				<Material.AppBar Dock="Top"/>
+
+		
+
+				
+				<Circle Width="64" Height="64" Color="{Resource Material.AccentColor}" >
+						<WhilePressed>
+							<Move Y="-200" Duration="0.6">
+								<CubicBezierEasing ControlPoints="0.0, 0.0, 0.2, 1.0" />
+							</Move>
+						</WhilePressed>
+				</Circle>
+
+				<Material.Card Width="100" Height="100" />
+
+			</DockPanel>
+		</Panel>
+			
+			
+	</EdgeNavigator>
+
+</App>
+
