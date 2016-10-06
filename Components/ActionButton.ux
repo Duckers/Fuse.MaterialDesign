@@ -1,0 +1,15 @@
+<Container ux:Class="Material.ActionButton" Subtree="inner" Width="56" Height="56" Margin="16" Icon="Plus">
+	<Material.IconName ux:Property="Icon" />
+	<Material.ActionButton ux:Class="Material.MiniActionButton" Width="40" Height="40" />
+	
+	<Material.WhileTablet ux:Binding="Children">
+		<Change this.Margin="24" />
+	</Material.WhileTablet>
+
+	<Circle ux:Binding="Children" Color="{Resource Material.AccentColor}" >
+		<Panel ux:Name="inner" Alignment="Center">
+			<Material.MaterialIcon Icon="{Property Icon}" Color="{Resource Material.AccentIconColor}" />
+		</Panel>
+		<DropShadow />
+	</Circle>
+</Container>

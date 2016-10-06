@@ -1,6 +1,4 @@
 <App>
-	
-	<float4 ux:Key="Material.AccentColor" ux:Value="Material.OrangeA200" />
 	<EdgeNavigator>
 
 		<Material.Drawer Edge="Left">
@@ -12,21 +10,16 @@
 		<Panel>
 			<Panel ux:Name="overlay" Color="Black" Opacity="0" HitTestMode="None" />
 			<DockPanel Color="{Resource Material.BackgroundColor}">
-				
-				
 
-				<Material.AppBar Dock="Top"/>
-
-		
-
+				<Material.AppBar Dock="Top">
+					<Material.AppBarIcon Dock="Left" Icon="Menu"  />
+					<Material.AppBarIcon Dock="Right" Icon="DotsVertical"  />
+				</Material.AppBar>
 				
-				<Circle Width="64" Height="64" Color="{Resource Material.AccentColor}" >
-						<WhilePressed>
-							<Move Y="-200" Duration="0.6">
-								<CubicBezierEasing ControlPoints="0.0, 0.0, 0.2, 1.0" />
-							</Move>
-						</WhilePressed>
-				</Circle>
+				<StackPanel Alignment="BottomRight">
+					<Material.MiniActionButton Icon="Plus" />
+					<Material.ActionButton Icon="AccountPlus" />
+				</StackPanel>
 
 				<Material.Card Width="100" Height="100" />
 

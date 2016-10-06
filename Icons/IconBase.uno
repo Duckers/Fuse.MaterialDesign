@@ -18,20 +18,20 @@ namespace Material
 			_text.Font = _iconFont;
 			Children.Add(_text);
 
-			Symbol = IconName.Menu;
+			Icon = IconName.Menu;
 			_text.FontSize = 20;
 		}
 
-		IconName _symbol;
-		public IconName Symbol 
+		IconName _icon;
+		public IconName Icon 
 		{
-			get { return _symbol; }
+			get { return _icon; }
 			set 
 			{
-				if (_symbol != value)
+				if (_icon != value)
 				{
-					_symbol = value;
-					_text.Value = new string(new char[] { (char)(int)_symbol });
+					_icon = value;
+					_text.Value = new string(new char[] { (char)(int)_icon });
 				}
 			}
 		}

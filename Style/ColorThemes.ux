@@ -16,6 +16,7 @@
 	<float4 ux:Global="Material.CardColor" ux:Value="Material.White" />
 	<float4 ux:Global="Material.DialogColor" ux:Value="Material.White" />
 	<float4 ux:Global="Material.AppBarIconColor" ux:Value="Material.White" />
+	<float4 ux:Global="Material.AccentIconColor" ux:Value="Material.White" />
 
 	<!-- https://material.google.com/style/color.html#color-themes -->
 	<WhileTrue Value="true" ux:Class="Material.LightThemeBase">

@@ -1,12 +1,12 @@
-<Panel ux:Class="Material.AppBar" Dock="Top">
+<Container ux:Class="Material.AppBar" Subtree="toolstrip" Dock="Top">
 	
 	<!-- https://material.google.com/layout/structure.html#structure-app-bar -->
 
-	<Material.Icon ux:Class="Material.AppBarIcon" Color="{Resource Material.AppBarIconColor}" />
+	<Material.MaterialIcon ux:Class="Material.AppBarIcon" Color="{Resource Material.AppBarIconColor}" />
 
 	
 
-	<DockPanel Color="{Resource Material.PrimaryColor}">
+	<DockPanel ux:Binding="Children" Color="{Resource Material.PrimaryColor}">
 		<StatusBarBackground Dock="Top">
 			<Android.StatusBarConfig Color="#0003" />
 		</StatusBarBackground>
@@ -14,13 +14,12 @@
 			<WhileWindowLandscape>
 				<Change toolbar.Height="48" Duration="0.2" />
 			</WhileWindowLandscape>
-			<DockPanel Alignment="VerticalCenter" Margin="16,0,16,0">
-				<Material.AppBarIcon Dock="Left" Symbol="Menu"  />
-				<Material.AppBarIcon Dock="Right" Symbol="DotsVertical"  />
+			<DockPanel ux:Name="toolstrip" Alignment="VerticalCenter" Margin="16,0,16,0">
+				
 			</DockPanel>
 		</Panel>
 	</DockPanel>
 
-	<Material.BottomEdgeShadow />
+	<Material.BottomEdgeShadow ux:Binding="Children" />
 	
-</Panel>
+</Container>
