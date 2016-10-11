@@ -1,46 +1,23 @@
 <App>
-	<EdgeNavigator  ux:Name="edgeNav">
-
-		<JavaScript>
-			module.exports = {
-				toggleDrawer: function() {
-					edgeNav.open("Left");
-				}
-			}
-		</JavaScript>
-
-		<Material.Drawer Edge="Left">
-			<ActivatingAnimation>
-				<Change overlay.Opacity="0.7" />
-			</ActivatingAnimation>
+	<Material.DrawerPanel>
+		<Material.Drawer ux:Binding="Drawer" Edge="Left">
+			<Text Alignment="Center">Hello!</Text>
 		</Material.Drawer>
+			
+		<DockPanel>
 
-		<Panel>
-			<Panel ux:Name="overlay" Color="Black" Opacity="0" HitTestMode="None" />
-			<DockPanel Color="{Resource Material.BackgroundColor}">
+			<Material.AppBar Dock="Top">
+				<Material.AppBarIcon Dock="Left" Icon="Menu" Clicked="{openDrawerPanel}" />
+				<Material.AppBarIcon Dock="Right" Icon="DotsVertical" Clicked="{toggleMenu}" />
+				<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
+			</Material.AppBar>
+			
+			<StackPanel Alignment="BottomRight">
+				<Material.MiniActionButton Icon="Plus" />
+				<Material.ActionButton Icon="AccountPlus" />
+			</StackPanel>
 
-				<Material.AppBar Dock="Top">
-					<Material.AppBarIcon Dock="Left" Icon="Menu" Clicked="{toggleDrawer}" />
-					<Material.AppBarIcon Dock="Right" Icon="DotsVertical"  />
-					<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
-				</Material.AppBar>
-				
-				<StackPanel Alignment="BottomRight">
-					<Material.MiniActionButton Icon="Plus" />
-					<Material.ActionButton Icon="AccountPlus" />
-				</StackPanel>
-
-				<Material.Menu>
-					<Material.IconMenuItem Text="Option one" />
-					<Material.IconMenuItem Text="Move to trash" Icon="Delete" />
-					<Material.IconMenuItem Text="Lolzor material" />
-				</Material.Menu>
-
-				<Material.Card Width="100" Height="100">
-				</Material.Card>
-			</DockPanel>
-		</Panel>
-	</EdgeNavigator>
-
+		</DockPanel>
+	</Material.DrawerPanel>
 </App>
 

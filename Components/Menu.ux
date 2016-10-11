@@ -1,4 +1,4 @@
-<Material.Card ux:Class="Material.Menu" ux:Name="menu" Margin="16" Padding="0,8,0,8" Alignment="TopRight">
+<Material.Card ux:Class="Material.Menu" Margin="16" Padding="0,8,0,8" Alignment="TopRight">
 	<StackLayout />
 	<!-- https://material.google.com/components/menus.html -->
 
@@ -23,7 +23,9 @@
 	</Container>
 
 	<AddingAnimation>
-		<Resize X="200" Duration="{Resource Material.EnteringDuration}" Easing="Material.DecelerationCurve" />
+		<!--<Change this.Opacity="0" Duration="0.3" />-->
+		<Change this.Width="10" />
+		<Nothing Duration="1" />
 	</AddingAnimation>
 
 </Material.Card>

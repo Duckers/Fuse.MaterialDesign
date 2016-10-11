@@ -1,0 +1,24 @@
+<Container ux:Class="Material.DrawerPanel" Subtree="subtree">
+	<JavaScript>
+		module.exports = {
+			openDrawerPanel: function() {
+				edgeNav.open("Left");
+			}
+		}
+	</JavaScript>
+	<Material.Drawer ux:Dependency="Drawer" />
+	<AlternateRoot ParentNode="Drawer">
+		<ActivatingAnimation>
+			<Change overlay.Opacity="0.7" />
+		</ActivatingAnimation>
+	</AlternateRoot>
+
+	<EdgeNavigator ux:Name="edgeNav" ux:Binding="Children">
+		<Material.Drawer ux:Ref="Drawer" ux:Binding="Children" Edge="Left" />
+		<Panel Color="{Resource Material.BackgroundColor}">
+			<Panel ux:Name="overlay" Color="Black" Opacity="0" HitTestMode="None" />
+			<Panel ux:Name="subtree">
+			</Panel>
+		</Panel>
+	</EdgeNavigator>
+</Container>
