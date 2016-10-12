@@ -1,7 +1,7 @@
 <Panel ux:Class="Material.FormFactors">
 
 	<!-- Is active while the device is considered a tablet device in material design -->
-	<WhileWindowSize ux:Class="Material.WhileTablet" GreaterThan="720,1">
+	<WhileWindowSize ux:Class="Material.WhileTablet" GreaterThan="599,1">
 
 	</WhileWindowSize>
 
