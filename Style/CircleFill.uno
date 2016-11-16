@@ -3,7 +3,6 @@ using Uno.UX;
 using Uno.Graphics;
 
 using Fuse.Drawing;
-using Fuse.Designer;
 using Fuse.Internal;
 using Fuse.Elements;
 using Fuse.Resources;
