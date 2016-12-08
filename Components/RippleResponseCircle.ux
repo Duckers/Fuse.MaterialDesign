@@ -14,7 +14,7 @@
 					</WhileFalse>
 
 					<AddingAnimation>
-						<PlayTo Target="timeline" Direction="Backward" Progress="1" />
+						<PlayTo Target="timeline" When="Backward" Progress="1" />
 					</AddingAnimation>
 					<RemovingAnimation>
 						<Change fill.Radius="300" Duration="0.45" Easing="Material.StandardCurve" MixOp="Add" />
