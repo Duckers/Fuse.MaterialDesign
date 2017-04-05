@@ -5,14 +5,10 @@
 	<Rectangle ux:Name="rect" ux:Binding="Children" CornerRadius="{ReadProperty CornerRadius}" Fill="0,0,0,0" HitTestMode="LocalVisual">
 		<WhilePressed ux:Name="wp">
 			<Instance>
-				<Rectangle CornerRadius="{ReadProperty CornerRadius}">
-					<Material.CircleFill ux:Name="fill" Color="{ReadProperty RippleColor}" CircleCenter="{SnapshotProperty wp.PressedPosition}" Radius="0"/>
+				<Rectangle ux:Name="c1" CornerRadius="{ReadProperty CornerRadius}">
+					<Material.CircleFill ux:Name="fill" Color="{ReadProperty RippleColor}" 
+						CircleCenter="{ReadProperty RippleFromPointer} ? {SnapshotProperty wp.PressedPosition} : (width(c1)/2,height(c1)/2)" Radius="0"/>
 					
-					<WhileFalse Value="{Property RippleFromPointer}">
-						<Change ux:Name="change1" Target="fill.CircleCenter"/>
-						<DivideOperator Target="change1.Value" Left="{SnapshotProperty rect.ActualSize}" Right="2" />
-					</WhileFalse>
-
 					<AddingAnimation>
 						<PlayTo Target="timeline" Direction="Backward" Progress="1" />
 					</AddingAnimation>

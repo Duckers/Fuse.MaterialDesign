@@ -5,13 +5,9 @@
 	<Circle ux:Name="rect" ux:Binding="Children" Pressed="{onPressed}" Released="{onReleased}" Fill="0,0,0,0" HitTestMode="LocalVisual" Placed="{onPlaced}">
 		<WhilePressed ux:Name="wp">
 			<Instance>
-				<Circle>
-					<Material.CircleFill ux:Name="fill" Color="{ReadProperty RippleColor}" CircleCenter="{SnapshotProperty wp.PressedPosition}" Radius="0"/>
-					
-					<WhileFalse Value="{Property RippleFromPointer}">
-						<Change ux:Name="change1" Target="fill.CircleCenter"/>
-						<DivideOperator Target="change1.Value" Left="{SnapshotProperty rect.ActualSize}" Right="2" />
-					</WhileFalse>
+				<Circle ux:Name="c1">
+					<Material.CircleFill ux:Name="fill" Color="{ReadProperty RippleColor}" 
+						CircleCenter="{ReadProperty RippleFromPointer} ? {SnapshotProperty wp.PressedPosition} : (width(c1)/2,height(c1)/2)" Radius="0"/>
 
 					<AddingAnimation>
 						<PlayTo Target="timeline" When="Backward" Progress="1" />
