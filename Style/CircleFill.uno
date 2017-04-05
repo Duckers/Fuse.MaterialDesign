@@ -62,6 +62,7 @@ namespace Material
 		//translate to/from element position to get the correct UV coordinates based on _container.Sizing
 		float2 ElementPosition: req(TexCoord as float2)
 			CanvasSize * TexCoord;
-		FinalColor : float4(Color.XYZ, Color.W * Math.Clamp(Radius - Vector.Distance(pixel ElementPosition, CircleCenter), 0, 1));
+		float Alpha: Color.W *  Math.Clamp(Radius - Vector.Distance(pixel ElementPosition, CircleCenter), 0, 1);
+		FinalColor : float4(Color.XYZ*Alpha, Alpha);
 	}
 }
