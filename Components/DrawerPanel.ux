@@ -10,6 +10,7 @@
 	<AlternateRoot ParentNode="Drawer">
 		<ActivatingAnimation>
 			<Change overlay.Opacity="0.7" />
+			<Change overlay.HitTestMode="LocalBounds" />
 		</ActivatingAnimation>
 	</AlternateRoot>
 
