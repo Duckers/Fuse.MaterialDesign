@@ -229,7 +229,7 @@
 	<float4 ux:Global="Material.PurpleA200" ux:Value="#E040FB" />
 	<float4 ux:Global="Material.PurpleA400" ux:Value="#D500F9" />
 	<float4 ux:Global="Material.PurpleA700" ux:Value="#AA00FF" />
-	<float4 ux:Global="Material.Red" ux:Value="#000000" />
+	<float4 ux:Global="Material.Red" ux:Value="#F44336" />
 	<float4 ux:Global="Material.Red100" ux:Value="#FFCDD2" />
 	<float4 ux:Global="Material.Red200" ux:Value="#EF9A9A" />
 	<float4 ux:Global="Material.Red300" ux:Value="#E57373" />
