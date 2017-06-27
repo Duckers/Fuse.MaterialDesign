@@ -1,4 +1,4 @@
-<Panel ux:Class="Material.Button" Alignment="Center" Enabled="true" Raised="true" Height="48" MinWidth="88" Padding="8,0" HitTestMode="LocalBoundsAndChildren" BackgroundColor="White" InkColor="#ccc">
+<Panel ux:Class="Material.Button" Alignment="Center" Enabled="true" Raised="true" Height="48" MinWidth="88" Padding="8,0" HitTestMode="LocalBounds" BackgroundColor="White" InkColor="#ccc">
 
 	<string ux:Property="Text" />
 	<bool ux:Property="Enabled" />
