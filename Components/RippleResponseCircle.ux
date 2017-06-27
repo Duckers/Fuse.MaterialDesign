@@ -10,7 +10,7 @@
 						CircleCenter="{ReadProperty RippleFromPointer} ? {SnapshotProperty wp.PressedPosition} : (width(c1)/2,height(c1)/2)" Radius="0"/>
 
 					<AddingAnimation>
-						<PlayTo Target="timeline" When="Backward" Progress="1" />
+						<TimelineAction How="PlayTo" Target="timeline" When="Backward" Progress="1"/>
 					</AddingAnimation>
 					<RemovingAnimation>
 						<Change fill.Radius="300" Duration="0.45" Easing="Material.StandardCurve" MixOp="Add" />
