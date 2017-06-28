@@ -1,5 +1,0 @@
-<Panel ux:Class="Material.Fonts">
-	<Font File="Roboto-Medium.ttf" ux:Global="RobotoMedium"/>
-	<Font File="Roboto-Regular.ttf" ux:Global="RobotoRegular"/>
-	<Font File="Roboto-Light.ttf" ux:Global="RobotoLight"/>
-</Panel>

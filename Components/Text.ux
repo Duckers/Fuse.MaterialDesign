@@ -1,2 +1,2 @@
-<Text ux:Class="Material.Text" Font="RobotoRegular" FontSize="14" Color="{Resource Material.PrimaryTextColor}">
+<Text ux:Class="Material.Text" Color="{Resource Material.PrimaryTextColor}">
 </Text>

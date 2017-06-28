@@ -78,7 +78,7 @@
 
 	<!-- content panel (layer 3) -->
 	<Rectangle ux:Name="innerPanel" ZOffset="3" Height="{ReadProperty raisedButtonBody.Height}" Padding="{ReadProperty raisedButtonBody.Padding}" CornerRadius="{ReadProperty raisedButtonBody.CornerRadius}" ClipToBounds="true">
-		<Text ux:Name="text" Value="{ReadProperty Text}" Alignment="Center" Font="RobotoMedium"  FontSize="14"/>
+		<Text ux:Name="text" Value="{ReadProperty Text}" Alignment="Center" FontSize="14"/>
 	</Rectangle>
 
 </Panel>
