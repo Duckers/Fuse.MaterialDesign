@@ -6,51 +6,59 @@
 	<float4 ux:Property="BackgroundColor"/>
 	<float4 ux:Property="InkColor"/>
 
-	<Rectangle ux:Name="RaisedButton_body" ZOffset="1" Height="36" Padding="8,0" CornerRadius="2">
-		<SolidColor Color="{ReadProperty this.BackgroundColor}" />
-		<WhileTrue Value="{ReadProperty this.Raised}">
+	<WhileFalse Value="{ReadProperty Enabled}">
+		<Change text.Opacity="0.26"/>
+		<Change text.TextColor="#000000"/>
+	</WhileFalse>
+
+	<!-- button body with shadow (layer 1)-->
+	<Rectangle ux:Name="raisedButtonBody" ZOffset="1" Height="36" Padding="8,0" CornerRadius="2">
+		<SolidColor Color="{ReadProperty BackgroundColor}" />
+		<WhileTrue Value="{ReadProperty Raised}">
 			<Shadow ux:Name="raisedShadow" Distance="2" Size="3" />
 		</WhileTrue>
 	</Rectangle>
 
-	<Rectangle ux:Name="innerPanel" ZOffset="3" Height="{ReadProperty RaisedButton_body.Height}" Padding="{ReadProperty RaisedButton_body.Padding}" CornerRadius="{ReadProperty RaisedButton_body.CornerRadius}" ClipToBounds="true">
-		<Text Value="{ReadProperty this.Text}" Font="RobotoMedium" ux:Name="text" Alignment="Center" FontSize="14" />
-	</Rectangle>
+	<WhileTrue Value="{ReadProperty Enabled}">
 
-	<WhileTrue Value="{ReadProperty this.Enabled}" Invert="true">
-
-		<Change text.Opacity="0.26"/>
-		<Change text.TextColor="#000000"/>
-
-	</WhileTrue>
-
-	<WhileTrue Value="{ReadProperty this.Enabled}">
-
-		<Rectangle ux:Name="inkPanel" ZOffset="2" Height="{ReadProperty RaisedButton_body.Height}" Padding="{ReadProperty RaisedButton_body.Padding}" CornerRadius="{ReadProperty RaisedButton_body.CornerRadius}" ClipToBounds="true">
+		<!-- ink ripple effect panel (layer 2) -->
+		<Rectangle ux:Name="inkPanel" ZOffset="2" Height="{ReadProperty raisedButtonBody.Height}" Padding="{ReadProperty raisedButtonBody.Padding}" CornerRadius="{ReadProperty raisedButtonBody.CornerRadius}" ClipToBounds="true">
 
 			<WhileTrue ux:Name="showInk">
-				<Circle ux:Name="ink" Anchor="50%,50%" LayoutMaster="this" LayoutRole="Standard" Alignment="TopLeft" Offset="{ReadProperty touch.PressedPosition}" Width="width(this)*2" Height="width(this)*2" Color="{ReadProperty this.InkColor}" Opacity="1">
+				<Circle ux:Name="ink" Anchor="50%,50%" LayoutMaster="this" Layer="Background" LayoutRole="Standard" Alignment="TopLeft" Offset="{ReadProperty touch.PressedPosition}" Width="width(this)*2" Height="width(this)*2" Color="{ReadProperty InkColor}" Opacity="1">
+
 					<AddingAnimation>
 						<Change ux:Name="opacityAnimator" Target="ink.Opacity" Value="0" DurationBack="0.1" />
 						<Scale ux:Name="scaleAnimator" Factor="0" MixOp="Add" Duration="0.6" Easing="Material.StandardCurve" />
 					</AddingAnimation>
+
 					<RemovingAnimation>
 						<Change Target="ink.Opacity" Value="0" Duration="0.1" />
 					</RemovingAnimation>
+
 				</Circle>
+
 			</WhileTrue>
+
 			<Timeline ux:Name="singleRipple" PlayMode="Once">
+
 				<Change Target="ink.Opacity" Easing="Material.StandardCurve">
 					<Keyframe Value="0" Time="0" />
 					<Keyframe Value="1" Time="0.3" />
 				</Change>
+
+				<!-- progress = 0 -->
 				<Set opacityAnimator.Duration="0.05" AtProgress="0" />
-				<Set opacityAnimator.Duration="0.2" AtProgress="1" />
 				<Set scaleAnimator.Duration="0.3" AtProgress="0" />
 				<Set showInk.Value="true" AtProgress="0" />
+
+				<!-- progress = 1 -->
+				<Set opacityAnimator.Duration="0.2" AtProgress="1" />
 				<Set showInk.Value="false" AtProgress="1" />
 				<Set scaleAnimator.Duration="0.6" AtProgress="1" />
+
 			</Timeline>
+
 		</Rectangle>
 
 		<WhilePressed ux:Name="touch">
@@ -67,5 +75,10 @@
 		</Tapped>
 
 	</WhileTrue>
+
+	<!-- content panel (layer 3) -->
+	<Rectangle ux:Name="innerPanel" ZOffset="3" Height="{ReadProperty raisedButtonBody.Height}" Padding="{ReadProperty raisedButtonBody.Padding}" CornerRadius="{ReadProperty raisedButtonBody.CornerRadius}" ClipToBounds="true">
+		<Text ux:Name="text" Value="{ReadProperty Text}" Alignment="Center" Font="RobotoMedium"  FontSize="14"/>
+	</Rectangle>
 
 </Panel>

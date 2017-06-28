@@ -11,13 +11,13 @@
 				<Material.AppBarIcon Dock="Right" Icon="AccountPlus"  />
 			</Material.AppBar>
 
-			<Rectangle Dock="Top" Margin="5">
+			<Rectangle Dock="Top" Margin="5" CornerRadius="5">
 				<StackLayout/>
-				<Stroke Width="1" Color="Black"/>
-				<Material.Text Alignment="Center" Margin="5" Value="Buttons"/>
+				<Stroke Width="1" Color="#aaa"/>
+				<Material.Text Alignment="Center" Margin="10" Value="Material.Button"/>
 				<StackPanel Orientation="Horizontal">
-					<Material.Button Text="Button - Enabled" Raised="true" Enabled="true" BackgroundColor="Material.Blue100" InkColor="Material.Blue300"/>
-					<Material.Button Text="Button - Disabled" Raised="true" Enabled="false" BackgroundColor="Material.Blue100"/>
+					<Material.Button Text="Button - Enabled" Raised="true" Enabled="true" BackgroundColor="Material.Blue200" InkColor="Material.Blue300"/>
+					<Material.Button Text="Button - Disabled" Raised="true" Enabled="false" BackgroundColor="Material.Blue200"/>
 				</StackPanel>
 				<StackPanel Orientation="Horizontal">
 					<Material.Button Text="Flat Button - Enabled" Raised="false" Enabled="true" BackgroundColor="#FFFFFF00" InkColor="Material.Blue300"/>
